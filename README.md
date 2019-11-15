@@ -10,6 +10,7 @@ The program need you to input the full path of the input EDMX file with below pr
 **Input the full path of the file you want to transform:**
 
 And you can directly use the file in example folder, such as:
+
 **C:\[your project path]\\SwaggerTransformer\examples\com.sap.gtt.app.tfo.TFOService_metadata.xml**
 
 Then the result file will be generated under your project path.
