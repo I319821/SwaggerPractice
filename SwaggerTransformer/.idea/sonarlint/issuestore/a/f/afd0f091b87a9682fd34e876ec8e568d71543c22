@@ -1,0 +1,12 @@
+
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(Ó™€¸ÿÿÿÿÿ
+jsquid:ModifiersOrderCheck	"EReorder the modifiers to comply with the Java Language Specification.(‰­á˜
+gsquid:S3027"KPut single-quotes around '\\' to use the faster "lastIndexOf(char)" method.(˜€Šñıÿÿÿÿ
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(Œ³í¶
+asquid:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(ÙÓâÖ
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.( ¹‚×
+fsquid:S3027!"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(ıõøğşÿÿÿÿ
+osquid:ModifiersOrderCheck%"EReorder the modifiers to comply with the Java Language Specification.(œ’Çæøÿÿÿÿ
+osquid:ModifiersOrderCheck+"EReorder the modifiers to comply with the Java Language Specification.(İ¤õÿÿÿÿÿ
+]
+squid:S899-"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ

@@ -1,0 +1,7 @@
+
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Í‰Š–þÿÿÿÿ
+ysquid:S3008"bRename this field "V4_TO_SWAGGER_RULE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼È÷Á
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(è¢—¢
+qsquid:S4435"ZSecure this "Transformer" by either disabling external DTDs or enabling secure processing.(Ý‰Ë–
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(èÝÎÑþÿÿÿÿ
+tsquid:S3008"]Rename this field "V2_TO_V4_RULE_PATH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µó»ø

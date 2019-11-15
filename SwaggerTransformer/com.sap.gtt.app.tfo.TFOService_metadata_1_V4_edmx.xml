@@ -1,0 +1,2173 @@
+<?xml version="1.0" encoding="UTF-8"?><edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+<edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml">
+<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+</edmx:Reference>
+<edmx:DataServices>
+<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="com.sap.gtt.app.tfo.TFOService">
+<Annotation String="2.0" Term="com.sap.vocabularies.Common.v1.OriginalProtocolVersion"/>
+<EntityContainer Name="EntityContainer">
+<EntitySet Name="ArrivalEvent" EntityType="com.sap.gtt.app.tfo.TFOService.ArrivalEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="BusinessReferenceNoForEvent" EntityType="com.sap.gtt.app.tfo.TFOService.BusinessReferenceNoForEvent">
+<NavigationPropertyBinding Target="FreightOrderEvent" Path="freightOrderEvent"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="BusinessReferenceNoForProcess" EntityType="com.sap.gtt.app.tfo.TFOService.BusinessReferenceNoForProcess">
+<NavigationPropertyBinding Target="FreightOrderProcess" Path="freightOrderProcess"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="CarrierArrivalEvent" EntityType="com.sap.gtt.app.tfo.TFOService.CarrierArrivalEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="CheckInEvent" EntityType="com.sap.gtt.app.tfo.TFOService.CheckInEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="CheckOutEvent" EntityType="com.sap.gtt.app.tfo.TFOService.CheckOutEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="CouplingEvent" EntityType="com.sap.gtt.app.tfo.TFOService.CouplingEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="DecouplingEvent" EntityType="com.sap.gtt.app.tfo.TFOService.DecouplingEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="DelayedOnStopEvent" EntityType="com.sap.gtt.app.tfo.TFOService.DelayedOnStopEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="DepartureEvent" EntityType="com.sap.gtt.app.tfo.TFOService.DepartureEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="Event" EntityType="com.sap.gtt.app.tfo.TFOService.Event">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="FreightOrderEvent" EntityType="com.sap.gtt.app.tfo.TFOService.FreightOrderEvent">
+<NavigationPropertyBinding Target="BusinessReferenceNoForEvent" Path="businessReferenceNo"/>
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<NavigationPropertyBinding Target="PlannedEventForEvent" Path="plannedEvents"/>
+<NavigationPropertyBinding Target="OriginalDocumentForEvent" Path="originalDocuments"/>
+<NavigationPropertyBinding Target="StopsForEvent" Path="stops"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="FreightOrderProcess" EntityType="com.sap.gtt.app.tfo.TFOService.FreightOrderProcess">
+<NavigationPropertyBinding Target="BusinessReferenceNoForProcess" Path="businessReferenceNo"/>
+<NavigationPropertyBinding Target="QualifiedTrackingId" Path="trackingIds"/>
+<NavigationPropertyBinding Target="PlannedEvent" Path="plannedEvents"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="processEvents"/>
+<NavigationPropertyBinding Target="OriginalDocumentForProcess" Path="originalDocuments"/>
+<NavigationPropertyBinding Target="StopsForProcess" Path="stops"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTDPPBlockingEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTDPPBlockingEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTDPPDeletionEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTDPPDeletionEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTDelayedEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTDelayedEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTDeletionEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTDeletionEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTOverdueEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTOverdueEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GTTResetPlannedEventStatusEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GTTResetPlannedEventStatusEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="GeoLocationUpdateEvent" EntityType="com.sap.gtt.app.tfo.TFOService.GeoLocationUpdateEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="LoadingEndEvent" EntityType="com.sap.gtt.app.tfo.TFOService.LoadingEndEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="LoadingStartEvent" EntityType="com.sap.gtt.app.tfo.TFOService.LoadingStartEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="OnTimeOnStopEvent" EntityType="com.sap.gtt.app.tfo.TFOService.OnTimeOnStopEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="OriginalDocumentForEvent" EntityType="com.sap.gtt.app.tfo.TFOService.OriginalDocumentForEvent">
+<NavigationPropertyBinding Target="FreightOrderEvent" Path="freightOrderEvent"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="OriginalDocumentForProcess" EntityType="com.sap.gtt.app.tfo.TFOService.OriginalDocumentForProcess">
+<NavigationPropertyBinding Target="FreightOrderProcess" Path="freightOrderProcess"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="PlannedEvent" EntityType="com.sap.gtt.app.tfo.TFOService.PlannedEvent">
+<NavigationPropertyBinding Target="TrackedProcess" Path="process"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="lastProcessEventDirectory"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="PlannedEventForEvent" EntityType="com.sap.gtt.app.tfo.TFOService.PlannedEventForEvent">
+<NavigationPropertyBinding Target="Event" Path="event"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="ProcessEventDirectory" EntityType="com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory">
+<NavigationPropertyBinding Target="TrackedProcess" Path="process"/>
+<NavigationPropertyBinding Target="PlannedEvent" Path="plannedEvent"/>
+<NavigationPropertyBinding Target="Event" Path="event"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="ProofofDeliveryEvent" EntityType="com.sap.gtt.app.tfo.TFOService.ProofofDeliveryEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="ProofofPickUpEvent" EntityType="com.sap.gtt.app.tfo.TFOService.ProofofPickUpEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="QualifiedTrackingId" EntityType="com.sap.gtt.app.tfo.TFOService.QualifiedTrackingId">
+<NavigationPropertyBinding Target="TrackedProcess" Path="process"/>
+<NavigationPropertyBinding Target="TrackedProcess" Path="observedProcess"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="Reference" EntityType="com.sap.gtt.app.tfo.TFOService.Reference">
+<NavigationPropertyBinding Target="Event" Path="event"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="StopsForEvent" EntityType="com.sap.gtt.app.tfo.TFOService.StopsForEvent">
+<NavigationPropertyBinding Target="FreightOrderEvent" Path="freightOrderEvent"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="StopsForProcess" EntityType="com.sap.gtt.app.tfo.TFOService.StopsForProcess">
+<NavigationPropertyBinding Target="FreightOrderProcess" Path="freightOrderProcess"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="TrackedProcess" EntityType="com.sap.gtt.app.tfo.TFOService.TrackedProcess">
+<NavigationPropertyBinding Target="QualifiedTrackingId" Path="trackingIds"/>
+<NavigationPropertyBinding Target="PlannedEvent" Path="plannedEvents"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="processEvents"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="UnLoadingEndEvent" EntityType="com.sap.gtt.app.tfo.TFOService.UnLoadingEndEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="UnLoadingStartEvent" EntityType="com.sap.gtt.app.tfo.TFOService.UnLoadingStartEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+<EntitySet Name="VPShipmentCreationEvent" EntityType="com.sap.gtt.app.tfo.TFOService.VPShipmentCreationEvent">
+<NavigationPropertyBinding Target="Reference" Path="references"/>
+<NavigationPropertyBinding Target="ProcessEventDirectory" Path="eventProcesses"/>
+<Annotation Term="Capabilities.SearchRestrictions">
+<Record>
+<PropertyValue Bool="false" Property="Searchable"/>
+</Record>
+</Annotation>
+</EntitySet>
+</EntityContainer>
+<EntityType Name="ArrivalEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="BusinessReferenceNoForEvent">
+<Key>
+<PropertyRef Name="documentId"/>
+<PropertyRef Name="documentTypeCode"/>
+<PropertyRef Name="itemTypeCode"/>
+<PropertyRef Name="itemId"/>
+<PropertyRef Name="freightOrderEvent_id"/>
+</Key>
+<Property Name="documentId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<Property Name="documentTypeCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+<Property Name="itemTypeCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+<Property Name="itemId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<NavigationProperty Name="freightOrderEvent" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderEvent" Partner="businessReferenceNo">
+<ReferentialConstraint Property="freightOrderEvent_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderEvent_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="BusinessReferenceNoForProcess">
+<Key>
+<PropertyRef Name="documentId"/>
+<PropertyRef Name="documentTypeCode"/>
+<PropertyRef Name="itemTypeCode"/>
+<PropertyRef Name="itemId"/>
+<PropertyRef Name="freightOrderProcess_id"/>
+</Key>
+<Property Name="documentId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<Property Name="documentTypeCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+<Property Name="itemTypeCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+<Property Name="itemId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<NavigationProperty Name="freightOrderProcess" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderProcess" Partner="businessReferenceNo">
+<ReferentialConstraint Property="freightOrderProcess_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderProcess_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="CarrierArrivalEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="CheckInEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="CheckOutEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="CouplingEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="DecouplingEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="DelayedOnStopEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="refPlannedEventType" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="refPlannedEventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="refPlannedEventLocationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="DepartureEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="Event">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+</EntityType>
+<EntityType Name="FreightOrderEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<NavigationProperty Name="plannedEvents" Type="Collection(com.sap.gtt.app.tfo.TFOService.PlannedEventForEvent)"/>
+<Property Name="freightOrderId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<Property Name="carrierLbnId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="carrierExternalId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="shipperLbnId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="shipperExternalId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="departureLocationId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="orderingPartyUserId" Type="Edm.String" Nullable="false" MaxLength="60"/>
+<Property Name="plannedDepartureDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedDepartureDate" Type="Edm.Date"/>
+<Property Name="plannedDepartureDateTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="departureStopId" Type="Edm.Int32"/>
+<Property Name="arrivalLocationId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="plannedArrivalDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedArrivalDate" Type="Edm.Date"/>
+<Property Name="plannedArrivalDateTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="arrivalStopId" Type="Edm.Int32"/>
+<Property Name="meansOfTransport" Type="Edm.String" MaxLength="10"/>
+<Property Name="shippingType" Type="Edm.String" MaxLength="3"/>
+<Property Name="trafficDirection" Type="Edm.String" MaxLength="3"/>
+<Property Name="incoterm" Type="Edm.String" MaxLength="3"/>
+<Property Name="dangerousGoods" Type="Edm.String" MaxLength="1"/>
+<Property Name="numberOfUnloadingStops" Type="Edm.Int32"/>
+<Property Name="numberOfLoadingStops" Type="Edm.Int32"/>
+<Property Name="numberOfVisits" Type="Edm.Int32"/>
+<Property Name="plannedTotalDistance" Type="Edm.Decimal" Scale="6" Precision="28"/>
+<Property Name="plannedTotalDistanceUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="plannedGrossDuration" Type="Edm.String" MaxLength="50"/>
+<Property Name="plannedNetDuration" Type="Edm.String" MaxLength="50"/>
+<Property Name="vehicle" Type="Edm.String" MaxLength="40"/>
+<Property Name="registrationCountry" Type="Edm.String" MaxLength="3"/>
+<Property Name="registrationNumber" Type="Edm.String" MaxLength="20"/>
+<Property Name="cargoWeight" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoWeightUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="cargoVolume" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoVolumeUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="cargoQuantity" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoQuantityUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="goodsValue" Type="Edm.Decimal" Scale="6" Precision="28"/>
+<Property Name="goodsValueCurr" Type="Edm.String" MaxLength="3"/>
+<Property Name="isCanceled" Type="Edm.Boolean"/>
+<Property Name="integratedWithVP" Type="Edm.Boolean"/>
+<NavigationProperty Name="originalDocuments" Type="Collection(com.sap.gtt.app.tfo.TFOService.OriginalDocumentForEvent)" Partner="freightOrderEvent"/>
+<NavigationProperty Name="stops" Type="Collection(com.sap.gtt.app.tfo.TFOService.StopsForEvent)" Partner="freightOrderEvent"/>
+<NavigationProperty Name="businessReferenceNo" Type="Collection(com.sap.gtt.app.tfo.TFOService.BusinessReferenceNoForEvent)" Partner="freightOrderEvent"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="FreightOrderProcess">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="trackedProcessType" Type="Edm.String" MaxLength="255"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="processStatus" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="trackingIds" Type="Collection(com.sap.gtt.app.tfo.TFOService.QualifiedTrackingId)"/>
+<NavigationProperty Name="plannedEvents" Type="Collection(com.sap.gtt.app.tfo.TFOService.PlannedEvent)"/>
+<NavigationProperty Name="processEvents" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="lifeCycleStatus" Type="Edm.String" MaxLength="20"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="lastChangedByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="lastChangeDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="version" Type="Edm.Int32"/>
+<Property Name="freightOrderId" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<Property Name="carrierLbnId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="carrierExternalId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="shipperLbnId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="shipperExternalId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="departureLocationId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="orderingPartyUserId" Type="Edm.String" Nullable="false" MaxLength="60"/>
+<Property Name="plannedDepartureDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedDepartureDate" Type="Edm.Date"/>
+<Property Name="plannedDepartureDateTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="departureStopId" Type="Edm.Int32"/>
+<Property Name="arrivalLocationId" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="plannedArrivalDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedArrivalDate" Type="Edm.Date"/>
+<Property Name="plannedArrivalDateTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="arrivalStopId" Type="Edm.Int32"/>
+<Property Name="meansOfTransport" Type="Edm.String" MaxLength="10"/>
+<Property Name="shippingType" Type="Edm.String" MaxLength="3"/>
+<Property Name="trafficDirection" Type="Edm.String" MaxLength="3"/>
+<Property Name="incoterm" Type="Edm.String" MaxLength="3"/>
+<Property Name="dangerousGoods" Type="Edm.String" MaxLength="1"/>
+<Property Name="numberOfUnloadingStops" Type="Edm.Int32"/>
+<Property Name="numberOfLoadingStops" Type="Edm.Int32"/>
+<Property Name="numberOfVisits" Type="Edm.Int32"/>
+<Property Name="plannedTotalDistance" Type="Edm.Decimal" Scale="6" Precision="28"/>
+<Property Name="plannedTotalDistanceUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="plannedGrossDuration" Type="Edm.String" MaxLength="50"/>
+<Property Name="plannedNetDuration" Type="Edm.String" MaxLength="50"/>
+<Property Name="vehicle" Type="Edm.String" MaxLength="40"/>
+<Property Name="registrationCountry" Type="Edm.String" MaxLength="3"/>
+<Property Name="registrationNumber" Type="Edm.String" MaxLength="20"/>
+<Property Name="cargoWeight" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoWeightUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="cargoVolume" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoVolumeUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="cargoQuantity" Type="Edm.Decimal" Scale="14" Precision="31"/>
+<Property Name="cargoQuantityUOM" Type="Edm.String" MaxLength="3"/>
+<Property Name="goodsValue" Type="Edm.Decimal" Scale="6" Precision="28"/>
+<Property Name="goodsValueCurr" Type="Edm.String" MaxLength="3"/>
+<Property Name="isCanceled" Type="Edm.Boolean"/>
+<Property Name="integratedWithVP" Type="Edm.Boolean"/>
+<Property Name="executionStatus" Type="Edm.String" MaxLength="50"/>
+<Property Name="lastExecutionStatusChangedAt" Type="Edm.DateTimeOffset"/>
+<NavigationProperty Name="originalDocuments" Type="Collection(com.sap.gtt.app.tfo.TFOService.OriginalDocumentForProcess)" Partner="freightOrderProcess"/>
+<NavigationProperty Name="stops" Type="Collection(com.sap.gtt.app.tfo.TFOService.StopsForProcess)" Partner="freightOrderProcess"/>
+<NavigationProperty Name="businessReferenceNo" Type="Collection(com.sap.gtt.app.tfo.TFOService.BusinessReferenceNoForProcess)" Partner="freightOrderProcess"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="lastBusinessDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="GTTDPPBlockingEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+</EntityType>
+<EntityType Name="GTTDPPDeletionEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+</EntityType>
+<EntityType Name="GTTDelayedEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="refPlannedEventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="refPlannedEventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="refPlannedEventLocationAltKey" Type="Edm.String" MaxLength="255"/>
+</EntityType>
+<EntityType Name="GTTDeletionEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+</EntityType>
+<EntityType Name="GTTOverdueEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="refPlannedEventUUID" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="GTTResetPlannedEventStatusEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="refPlannedEventType" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="refPlannedEventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="refPlannedEventLocationAltKey" Type="Edm.String" MaxLength="255"/>
+</EntityType>
+<EntityType Name="GeoLocationUpdateEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="LoadingEndEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="LoadingStartEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="OnTimeOnStopEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="refPlannedEventType" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="refPlannedEventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="refPlannedEventLocationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="OriginalDocumentForEvent">
+<Key>
+<PropertyRef Name="number"/>
+<PropertyRef Name="freightOrderEvent_id"/>
+</Key>
+<Property Name="number" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<NavigationProperty Name="freightOrderEvent" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderEvent" Partner="originalDocuments">
+<OnDelete Action="Cascade"/>
+<ReferentialConstraint Property="freightOrderEvent_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderEvent_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="OriginalDocumentForProcess">
+<Key>
+<PropertyRef Name="number"/>
+<PropertyRef Name="freightOrderProcess_id"/>
+</Key>
+<Property Name="number" Type="Edm.String" Nullable="false" MaxLength="20"/>
+<NavigationProperty Name="freightOrderProcess" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderProcess" Partner="originalDocuments">
+<OnDelete Action="Cascade"/>
+<ReferentialConstraint Property="freightOrderProcess_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderProcess_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="PlannedEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="process_id" Type="Edm.Guid"/>
+<NavigationProperty Name="process" Type="com.sap.gtt.app.tfo.TFOService.TrackedProcess">
+<ReferentialConstraint Property="process_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="eventStatus" Type="Edm.String" MaxLength="50"/>
+<Property Name="payloadSequence" Type="Edm.Int32"/>
+<Property Name="isFinalPlannedEvent" Type="Edm.Boolean"/>
+<NavigationProperty Name="lastProcessEventDirectory" Type="com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory">
+<ReferentialConstraint Property="lastProcessEventDirectory_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="nextOverdueDetection" Type="Edm.DateTimeOffset"/>
+<Property Name="overdueDetectionCounter" Type="Edm.Int32"/>
+<Property Name="plannedTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedTechTsEarliest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedTechTsLatest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBizTsEarliest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBizTsLatest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="lastProcessEventDirectory_id" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="PlannedEventForEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="event_id" Type="Edm.Guid"/>
+<NavigationProperty Name="event" Type="com.sap.gtt.app.tfo.TFOService.Event">
+<ReferentialConstraint Property="event_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="eventType" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="isFinalPlannedEvent" Type="Edm.Boolean"/>
+<Property Name="plannedTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedTechTsEarliest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedTechTsLatest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBizTsEarliest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBizTsLatest" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="ProcessEventDirectory">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="process_id" Type="Edm.Guid"/>
+<NavigationProperty Name="process" Type="com.sap.gtt.app.tfo.TFOService.TrackedProcess">
+<ReferentialConstraint Property="process_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="plannedEvent_id" Type="Edm.Guid"/>
+<NavigationProperty Name="plannedEvent" Type="com.sap.gtt.app.tfo.TFOService.PlannedEvent">
+<ReferentialConstraint Property="plannedEvent_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="event_id" Type="Edm.Guid"/>
+<NavigationProperty Name="event" Type="com.sap.gtt.app.tfo.TFOService.Event">
+<ReferentialConstraint Property="event_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="correlationType" Type="Edm.String" MaxLength="50"/>
+</EntityType>
+<EntityType Name="ProofofDeliveryEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="ProofofPickUpEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="QualifiedTrackingId">
+<Key>
+<PropertyRef Name="process_id"/>
+<PropertyRef Name="observedProcess_id"/>
+</Key>
+<Property Name="process_id" Type="Edm.Guid" Nullable="false"/>
+<NavigationProperty Name="process" Type="com.sap.gtt.app.tfo.TFOService.TrackedProcess">
+<ReferentialConstraint Property="process_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<NavigationProperty Name="observedProcess" Type="com.sap.gtt.app.tfo.TFOService.TrackedProcess">
+<ReferentialConstraint Property="observedProcess_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="validFrom" Type="Edm.DateTimeOffset"/>
+<Property Name="validTo" Type="Edm.DateTimeOffset"/>
+<Property Name="observedProcess_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="Reference">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="event_id" Type="Edm.Guid"/>
+<NavigationProperty Name="event" Type="com.sap.gtt.app.tfo.TFOService.Event">
+<ReferentialConstraint Property="event_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="referenceType" Type="Edm.String" Nullable="false" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" Nullable="false" MaxLength="255"/>
+<Property Name="validFrom" Type="Edm.DateTimeOffset"/>
+<Property Name="validTo" Type="Edm.DateTimeOffset"/>
+<Property Name="action" Type="Edm.String" Nullable="false" MaxLength="50"/>
+</EntityType>
+<EntityType Name="StopsForEvent">
+<Key>
+<PropertyRef Name="stopId"/>
+<PropertyRef Name="freightOrderEvent_id"/>
+</Key>
+<Property Name="stopId" Type="Edm.Int32" Nullable="false"/>
+<Property Name="sequentialNumber" Type="Edm.Int32" Nullable="false"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="plannedDepartureAt" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedArrivalAt" Type="Edm.DateTimeOffset"/>
+<Property Name="locationTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="departureDateTimeDSTIndicator" Type="Edm.Boolean"/>
+<Property Name="arrivalDateTimeDSTIndicator" Type="Edm.Boolean"/>
+<NavigationProperty Name="freightOrderEvent" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderEvent" Partner="stops">
+<OnDelete Action="Cascade"/>
+<ReferentialConstraint Property="freightOrderEvent_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderEvent_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="StopsForProcess">
+<Key>
+<PropertyRef Name="stopId"/>
+<PropertyRef Name="freightOrderProcess_id"/>
+</Key>
+<Property Name="stopId" Type="Edm.Int32" Nullable="false"/>
+<Property Name="sequentialNumber" Type="Edm.Int32" Nullable="false"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="plannedDepartureAt" Type="Edm.DateTimeOffset"/>
+<Property Name="plannedArrivalAt" Type="Edm.DateTimeOffset"/>
+<Property Name="locationTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="departureDateTimeDSTIndicator" Type="Edm.Boolean"/>
+<Property Name="arrivalDateTimeDSTIndicator" Type="Edm.Boolean"/>
+<NavigationProperty Name="freightOrderProcess" Type="com.sap.gtt.app.tfo.TFOService.FreightOrderProcess" Partner="stops">
+<OnDelete Action="Cascade"/>
+<ReferentialConstraint Property="freightOrderProcess_id" ReferencedProperty="id"/>
+</NavigationProperty>
+<Property Name="freightOrderProcess_id" Type="Edm.Guid" Nullable="false"/>
+</EntityType>
+<EntityType Name="TrackedProcess">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="trackedProcessType" Type="Edm.String" MaxLength="255"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="processStatus" Type="Edm.String" MaxLength="50"/>
+<NavigationProperty Name="trackingIds" Type="Collection(com.sap.gtt.app.tfo.TFOService.QualifiedTrackingId)"/>
+<NavigationProperty Name="plannedEvents" Type="Collection(com.sap.gtt.app.tfo.TFOService.PlannedEvent)"/>
+<NavigationProperty Name="processEvents" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="lifeCycleStatus" Type="Edm.String" MaxLength="20"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="lastChangedByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="lastChangeDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="version" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="UnLoadingEndEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="UnLoadingStartEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTime" Type="Edm.DateTimeOffset"/>
+<Property Name="estimatedArrivalTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="nextStopId" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="VPShipmentCreationEvent">
+<Key>
+<PropertyRef Name="id"/>
+</Key>
+<Property Name="id" Type="Edm.Guid" Nullable="false"/>
+<Property Name="subaccountId" Type="Edm.Guid"/>
+<Property Name="cloneInstanceId" Type="Edm.Guid"/>
+<Property Name="eventType" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonText" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventReasonCode" Type="Edm.String" MaxLength="255"/>
+<Property Name="senderPartyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="altKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="scheme" Type="Edm.String" MaxLength="255"/>
+<Property Name="partyId" Type="Edm.String" MaxLength="50"/>
+<Property Name="logicalSystem" Type="Edm.String" MaxLength="10"/>
+<Property Name="trackingIdType" Type="Edm.String" MaxLength="40"/>
+<Property Name="trackingId" Type="Edm.String" MaxLength="50"/>
+<Property Name="actualTechnicalTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimestamp" Type="Edm.DateTimeOffset"/>
+<Property Name="actualBusinessTimeZone" Type="Edm.String" MaxLength="50"/>
+<Property Name="locationAltKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="eventMatchKey" Type="Edm.String" MaxLength="255"/>
+<Property Name="longitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<Property Name="latitude" Type="Edm.Decimal" Scale="9" Precision="12"/>
+<NavigationProperty Name="references" Type="Collection(com.sap.gtt.app.tfo.TFOService.Reference)"/>
+<NavigationProperty Name="eventProcesses" Type="Collection(com.sap.gtt.app.tfo.TFOService.ProcessEventDirectory)"/>
+<Property Name="messageSourceType" Type="Edm.String" MaxLength="50"/>
+<Property Name="createdByUser" Type="Edm.String" MaxLength="64"/>
+<Property Name="creationDateTime" Type="Edm.DateTimeOffset"/>
+<Property Name="documentId" Type="Edm.String" MaxLength="20"/>
+<Property Name="documentTypeCode" Type="Edm.String" MaxLength="4"/>
+<Property Name="itemTypeCode" Type="Edm.String" MaxLength="4"/>
+<Property Name="itemId" Type="Edm.String" MaxLength="20"/>
+</EntityType>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/ArrivalEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/BusinessReferenceNoForEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/BusinessReferenceNoForProcess">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/CarrierArrivalEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/CheckInEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/CheckOutEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/CouplingEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/DecouplingEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/DelayedOnStopEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/DepartureEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/Event">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/FreightOrderEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/FreightOrderProcess">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTDPPBlockingEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTDPPDeletionEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTDelayedEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTDeletionEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTOverdueEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GTTResetPlannedEventStatusEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/GeoLocationUpdateEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/LoadingEndEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/LoadingStartEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/OnTimeOnStopEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/OriginalDocumentForEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/OriginalDocumentForProcess">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/PlannedEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/PlannedEventForEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/ProcessEventDirectory">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/ProofofDeliveryEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/ProofofPickUpEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/QualifiedTrackingId">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/Reference">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/StopsForEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/StopsForProcess">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/TrackedProcess">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/UnLoadingEndEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/UnLoadingStartEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+<Annotations Target="com.sap.gtt.app.tfo.TFOService.EntityContainer/VPShipmentCreationEvent">
+<Annotation Term="Capabilities.DeleteRestrictions">
+<Record Type="Capabilities.DeleteRestrictionsType">
+<PropertyValue Property="Deletable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.InsertRestrictions">
+<Record Type="Capabilities.InsertRestrictionsType">
+<PropertyValue Property="Insertable" Bool="false"/>
+</Record>
+</Annotation>
+<Annotation Term="Capabilities.UpdateRestrictions">
+<Record Type="Capabilities.UpdateRestrictionsType">
+<PropertyValue Property="Updatable" Bool="false"/>
+</Record>
+</Annotation>
+</Annotations>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>
